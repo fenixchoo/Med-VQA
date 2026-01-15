@@ -1,0 +1,11 @@
+
+torch>=2.0
+torchvision
+transformers==4.36.0
+open-clip-torch>=2.23.0
+sentencepiece
+numpy
+pandas
+scikit-learn
+tqdm
+Pillow

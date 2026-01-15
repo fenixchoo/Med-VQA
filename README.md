@@ -1,3 +1,50 @@
+# Medical Visual Question Answering (Med-VQA)
+
+This repository implements and evaluates two models on the VQA-RAD dataset:
+
+- CNN Baseline (ResNet-50 + BiLSTM)
+- Transformer-based VLM (BiomedCLIP + Q-Former + T5)
+
+The goal is to compare performance on **closed-ended vs open-ended** medical questions.
+
+## Dataset
+
+**VQA-RAD** (not included):
+
+```
+data/vqa_rad/
+├── VQA_RAD Image Folder/
+└── VQA_RAD Dataset Public.json
+```
+
+## Installation
+
+```bash
+pip install -r requirements.txt
+```
+
+## Training
+
+CNN:
+```bash
+python train.py --model cnn --data_dir ./data/vqa_rad
+```
+
+VLM:
+```bash
+python train.py --model vlm --data_dir ./data/vqa_rad
+```
+
+## Evaluation (Closed vs Open)
+
+```bash
+python evaluation.py   --model vlm   --data_dir ./data/vqa_rad   --ckpt path/to/best_model.pt
+```
+
+## Notes
+- Research / educational use only
+- Not for clinical deployment
+
 # Med-VQA
 Build and evaluate deep learning models that can answer questions about medical images
 
@@ -35,6 +82,4 @@ Only the adapter and classifier are trained.
 
 Dataset is **not included** in this repository.
 
-Download from the original authors and place it as:
-
-
+Download from the original authors.
